@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "雪狐耳 · 米白",
+      "tag": "狐耳 · 长毛绒",
+      "price": 68,
+      "instock": true,
+      "image": "images/placeholder-fox.jpg",
+      "description": "手工缝制的长毛绒狐耳,发夹式固定,适合日常配戴或拍照。"
+    },
+    {
+      "name": "黑猫耳 · 丝绒",
+      "tag": "猫耳 · 丝绒",
+      "price": 58,
+      "instock": true,
+      "image": "images/placeholder-cat.jpg",
+      "description": "哑光丝绒质感,耳型挺立不塌,发圈式设计,长发短发都合适。"
+    },
+    {
+      "name": "垂耳兔 · 奶灰",
+      "tag": "兔耳 · 短毛绒",
+      "price": 62,
+      "instock": false,
+      "image": "images/placeholder-rabbit.jpg",
+      "description": "自然下垂的兔耳造型,短毛绒亲肤不刺痒,重量轻,久戴不夹头。"
+    }
+  ]
+}
