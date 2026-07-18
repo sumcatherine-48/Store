@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>喵呜工坊 · 手作兽耳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#2B2130;
+    --bg-deep:#221A28;
+    --card:#F6ECE3;
+    --card-text:#2B2130;
+    --rose:#D88C9A;
+    --gold:#C79A5C;
+    --lilac:#C9B8D8;
+    --muted:#B9A9C4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--card);
+    font-family:'Noto Sans SC', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  /* ---- Ear-shaped divider, the signature element ---- */
+  .ear-divider{
+    width:100%;
+    height:34px;
+    background:var(--bg-deep);
+    -webkit-mask-image: radial-gradient(circle at 12% 0%, transparent 17px, black 18px),
+                         radial-gradient(circle at 32% 0%, transparent 17px, black 18px),
+                         radial-gradient(circle at 52% 0%, transparent 17px, black 18px),
+                         radial-gradient(circle at 72% 0%, transparent 17px, black 18px),
+                         radial-gradient(circle at 92% 0%, transparent 17px, black 18px);
+    -webkit-mask-repeat:no-repeat;
+    mask-image: radial-gradient(circle at 12% 0%, transparent 17px, black 18px),
+                radial-gradient(circle at 32% 0%, transparent 17px, black 18px),
+                radial-gradient(circle at 52% 0%, transparent 17px, black 18px),
+                radial-gradient(circle at 72% 0%, transparent 17px, black 18px),
+                radial-gradient(circle at 92% 0%, transparent 17px, black 18px);
+  }
+
+  header{
+    padding:64px 24px 40px;
+    text-align:center;
+  }
+  .brand{
+    font-family:'Ma Shan Zheng', cursive;
+    font-size:52px;
+    color:var(--rose);
+    margin:0;
+    letter-spacing:2px;
+  }
+  .tagline{
+    color:var(--muted);
+    margin-top:10px;
+    font-size:15px;
+    letter-spacing:1px;
+  }
+
+  main{
+    background:var(--bg-deep);
+    padding:48px 20px 80px;
+  }
+
+  .section-title{
+    font-family:'Ma Shan Zheng', cursive;
+    font-size:28px;
+    color:var(--lilac);
+    text-align:center;
+    margin:0 0 32px;
+  }
+
+  .grid{
+    max-width:1000px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:24px;
+  }
+
+  .card{
+    background:var(--card);
+    color:var(--card-text);
+    border-radius:4px 4px 26px 26px;
+    overflow:hidden;
+    position:relative;
+    transition:transform .25s ease;
+  }
+  .card:hover{ transform:translateY(-4px); }
+
+  .card .thumb{
+    width:100%;
+    aspect-ratio:4/3;
+    background:linear-gradient(135deg,#e7d6c5,#cbb69b);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#8a7455;
+    font-size:13px;
+  }
+  .card .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  .card .body{ padding:18px 18px 22px; }
+  .tag{
+    display:inline-block;
+    background:var(--lilac);
+    color:#2B2130;
+    font-size:11px;
+    padding:3px 10px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .card h3{ margin:0 0 6px; font-size:19px; }
+  .card p.desc{ margin:0 0 14px; font-size:13px; color:#5c5163; line-height:1.6; }
+  .price-row{ display:flex; align-items:baseline; justify-content:space-between; }
+  .price{
+    font-family:'Fraunces', serif;
+    font-size:24px;
+    color:#9b5f2c;
+  }
+  .price::before{ content:"RM "; font-size:14px; }
+  .stock{ font-size:12px; }
+  .stock.out{ color:#b04c4c; }
+  .stock.in{ color:#4c7a4c; }
+
+  .ship-wrap{
+    max-width:560px;
+    margin:0 auto;
+  }
+  .ship-select{
+    width:100%;
+    padding:12px 14px;
+    border-radius:10px;
+    border:1px solid var(--muted);
+    background:var(--bg);
+    color:var(--card);
+    font-size:15px;
+    margin-bottom:18px;
+  }
+  .ship-result{
+    background:rgba(246,236,227,0.06);
+    border:1px solid rgba(201,184,216,0.3);
+    border-radius:14px;
+    padding:18px 20px;
+    font-size:14px;
+    line-height:1.8;
+  }
+  .ship-result b{ color:var(--rose); font-family:'Fraunces', serif; font-size:20px; }
+
+  footer{
+    text-align:center;
+    padding:30px 20px 50px;
+    color:var(--muted);
+    font-size:12px;
+    background:var(--bg-deep);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="brand">喵呜工坊</p>
+  <p class="tagline">手作兽耳 · 一针一线,只做你的耳朵</p>
+</header>
+
+<div class="ear-divider"></div>
+
+<main>
+  <p class="section-title">产品展示</p>
+  <div class="grid" id="product-grid"></div>
+
+  <div class="ear-divider" style="margin:56px auto; max-width:1000px;"></div>
+
+  <p class="section-title">运费查询</p>
+  <div class="ship-wrap">
+    <select class="ship-select" id="region-select"></select>
+    <div class="ship-result" id="ship-result">请选择地区查看运费与预计送达时间。</div>
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> 喵呜工坊 · 价钱与库存以最新公告为准
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+fetch('data/products.json')
+  .then(r => r.json())
+  .then(data => {
+    const grid = document.getElementById('product-grid');
+    grid.innerHTML = data.products.map(p => `
+      <div class="card">
+        <div class="thumb">
+          <img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'; this.parentElement.textContent='图片准备中';">
+        </div>
+        <div class="body">
+          <span class="tag">${p.tag}</span>
+          <h3>${p.name}</h3>
+          <p class="desc">${p.description}</p>
+          <div class="price-row">
+            <span class="price">${p.price}</span>
+            <span class="stock ${p.instock ? 'in' : 'out'}">${p.instock ? '现货' : '暂缺货'}</span>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  })
+  .catch(() => {
+    document.getElementById('product-grid').textContent = '产品数据读取失败,请稍后再试。';
+  });
+
+fetch('data/shipping.json')
+  .then(r => r.json())
+  .then(data => {
+    const select = document.getElementById('region-select');
+    select.innerHTML = '<option value="">— 选择地区 —</option>' +
+      data.regions.map((r, i) => `<option value="${i}">${r.name}</option>`).join('');
+
+    select.addEventListener('change', () => {
+      const result = document.getElementById('ship-result');
+      if (select.value === '') {
+        result.textContent = '请选择地区查看运费与预计送达时间。';
+        return;
+      }
+      const r = data.regions[select.value];
+      result.innerHTML = `${r.name}运费 <b>RM ${r.rate}</b><br>预计送达:${r.note}`;
+    });
+  });
+</script>
+
+</body>
+</html>
