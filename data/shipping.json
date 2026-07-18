@@ -1,7 +1,7 @@
 {
   "regions": [
-    { "name": "西马", "rate": 6, "note": "3-5 个工作日" },
-    { "name": "东马", "rate": 12, "note": "5-7 个工作日" },
-    { "name": "国际", "rate": 25, "note": "7-14 个工作日,依国家而定" }
+    { "name": "West Malaysia", "rate": 6, "note": "3-5 business days" },
+    { "name": "East Malaysia", "rate": 12, "note": "5-7 business days" },
+    { "name": "International", "rate": 25, "note": "7-14 business days, depending on country" }
   ]
 }

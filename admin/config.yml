@@ -2,32 +2,32 @@ backend:
   name: git-gateway
   branch: main
 
-# 图片上传后会存放在这个文件夹,网站用 images/图片名 引用
+# Uploaded images will be stored here, reference via images/filename
 media_folder: "images"
 public_folder: "images"
 
-locale: "zh_Hans"
+locale: "en"
 
 collections:
   - name: "products"
-    label: "产品"
+    label: "Products"
     file: "data/products.json"
     fields:
-      - { label: "产品列表", name: "products", widget: "list", label_singular: "产品", fields:
-          - { label: "名称", name: "name", widget: "string" }
-          - { label: "标签(例:猫耳 · 丝绒)", name: "tag", widget: "string" }
-          - { label: "价钱 (RM)", name: "price", widget: "number", value_type: "float" }
-          - { label: "有现货", name: "instock", widget: "boolean", default: true }
-          - { label: "图片", name: "image", widget: "image" }
-          - { label: "描述", name: "description", widget: "text" }
+      - { label: "Product List", name: "products", widget: "list", label_singular: "Product", fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Tag (e.g. Cat Ears · Velvet)", name: "tag", widget: "string" }
+          - { label: "Price (RM)", name: "price", widget: "number", value_type: "float" }
+          - { label: "In Stock", name: "instock", widget: "boolean", default: true }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Description", name: "description", widget: "text" }
         }
 
   - name: "shipping"
-    label: "运费"
+    label: "Shipping"
     file: "data/shipping.json"
     fields:
-      - { label: "地区列表", name: "regions", widget: "list", label_singular: "地区", fields:
-          - { label: "地区名称", name: "name", widget: "string" }
-          - { label: "运费 (RM)", name: "rate", widget: "number", value_type: "float" }
-          - { label: "送达说明", name: "note", widget: "string" }
+      - { label: "Regions List", name: "regions", widget: "list", label_singular: "Region", fields:
+          - { label: "Region Name", name: "name", widget: "string" }
+          - { label: "Shipping Fee (RM)", name: "rate", widget: "number", value_type: "float" }
+          - { label: "Delivery Note", name: "note", widget: "string" }
         }
