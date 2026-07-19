@@ -1,9 +1,12 @@
 backend:
   name: git-gateway
+  repo: sumcatherine-48/Store
   branch: main
-  identity_url: https://friendly-lily-3271b6.netlify.app/.netlify/identity
-  gateway_url: https://friendly-lily-3271b6.netlify.app/.netlify/git
-
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/c64bd173-c012-43ce-9bf1-8f32873a21f3/pkce
+  auth_token_endpoint: /sites/c64bd173-c012-43ce-9bf1-8f32873a21f3/token
+  gateway_url: https://gateway.decapbridge.com
 media_folder: "images"
 public_folder: "images"
 locale: "en"
