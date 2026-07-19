@@ -2,7 +2,6 @@ backend:
   name: git-gateway
   branch: main
 
-# Uploaded images will be stored here, reference via images/filename
 media_folder: "images"
 public_folder: "images"
 locale: "en"
@@ -10,29 +9,35 @@ locale: "en"
 collections:
   - name: "products"
     label: "Products"
-    file: "data/products.json"
-    fields:
-      - label: "Product List"
-        name: "products"
-        widget: "list"
-        label_singular: "Product"
+    files:
+      - name: "products"
+        label: "Product List"
+        file: "data/products.json"
         fields:
-          - { label: "Name", name: "name", widget: "string" }
-          - { label: "Tag (e.g. Cat Ears · Velvet)", name: "tag", widget: "string" }
-          - { label: "Price (RM)", name: "price", widget: "number", value_type: "float" }
-          - { label: "In Stock", name: "instock", widget: "boolean", default: true }
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Description", name: "description", widget: "text" }
+          - label: "Product List"
+            name: "products"
+            widget: "list"
+            label_singular: "Product"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Tag (e.g. Cat Ears · Velvet)", name: "tag", widget: "string" }
+              - { label: "Price (RM)", name: "price", widget: "number", value_type: "float" }
+              - { label: "In Stock", name: "instock", widget: "boolean", default: true }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Description", name: "description", widget: "text" }
 
   - name: "shipping"
     label: "Shipping"
-    file: "data/shipping.json"
-    fields:
-      - label: "Regions List"
-        name: "regions"
-        widget: "list"
-        label_singular: "Region"
+    files:
+      - name: "shipping"
+        label: "Shipping Regions"
+        file: "data/shipping.json"
         fields:
-          - { label: "Region Name", name: "name", widget: "string" }
-          - { label: "Shipping Fee (RM)", name: "rate", widget: "number", value_type: "float" }
-          - { label: "Delivery Note", name: "note", widget: "string" }
+          - label: "Regions List"
+            name: "regions"
+            widget: "list"
+            label_singular: "Region"
+            fields:
+              - { label: "Region Name", name: "name", widget: "string" }
+              - { label: "Shipping Fee (RM)", name: "rate", widget: "number", value_type: "float" }
+              - { label: "Delivery Note", name: "note", widget: "string" }
